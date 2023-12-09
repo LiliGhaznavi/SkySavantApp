@@ -2,6 +2,13 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Inter", sans-serif;
+
+  --primary-light: white;
+  --primary-dark: #465375;
+}
+
+body.dark {
+  --primary-dark: white;
 }
 
 .background {
@@ -11,6 +18,7 @@ body {
 
 h1 {
   margin: 0;
+  color: var(--primary-dark);
 }
 
 .switch-toggle {
