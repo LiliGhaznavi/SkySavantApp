@@ -12,3 +12,37 @@ body {
 h1 {
   margin: 0;
 }
+
+.switch-toggle {
+  -webkit-appearance: none;
+  position: relative;
+  width: 100px;
+  height: 50px;
+  border-radius: 50px;
+  outline: none;
+  background-color: #c0d3e4;
+  background-image: url(../images/switchToggleLightSky.png);
+}
+
+.switch-toggle::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  bottom: 5px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50px;
+  background-color: #ffec41;
+}
+
+.switch-toggle:checked::before {
+  transform: translate(124%);
+  background-color: #c0d3e4;
+  background-image: url(../images/switchToggleMoon.png);
+}
+
+.switch-toggle:checked {
+  background-color: #465375;
+  background-image: url(../images/switchToggleDarkSky.png);
+}
