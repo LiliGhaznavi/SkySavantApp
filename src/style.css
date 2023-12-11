@@ -4,6 +4,14 @@ body {
   --primary-color: #f3dbe9;
   --secondary-color: #eff4f8;
   --background: #f0ebf4;
+  --search-box-bg: #eff4f8;
+  --search-box-text: #465375;
+  --search-box-shadow: rgba(0, 0, 0, 0.2);
+  --submit-box-bg: #465375;
+  --submit-box-text: #f3dbe9;
+  --submit-box-shadow: rgba(0, 0, 0, 0.2);
+  --detail-part-text: #959bbd;
+  --detail-part-strong: #465375;
 
   margin-top: 60px;
   margin-bottom: 30px;
@@ -15,16 +23,98 @@ body.dark {
   --primary-color: #465375;
   --secondary-color: #959bbd;
   --background: #2d3445;
+  --search-box-bg: #959bbd;
+  --search-box-text: #eff4f8;
+  --search-box-shadow: rgba(234, 237, 252, 0.15);
+  --submit-box-bg: #eff4f8;
+  --submit-box-text: #465375;
+  --submit-box-shadow: rgba(255, 255, 255, 0.2);
+  --detail-part-text: #f3dbe9;
+  --detail-part-strong: #eff4f8;
 }
 
 .top-container {
   max-width: 893px;
-  height: 397.07px;
+  height: 364px;
   flex-shrink: 0;
   margin: 0 auto;
   border-radius: 50px 50px 0px 0px;
   background-color: var(--primary-color);
   box-shadow: 8px 8px 20px 0px rgba(0, 0, 0, 0.25);
+}
+
+.search-form {
+  padding: 57px 64px 68px 63px;
+  text-align: center;
+}
+
+.search-input {
+  width: 75%;
+  height: 66px;
+  padding: 18px 25px;
+  border: none;
+  border-radius: 50px;
+  margin-right: 10px;
+  background-color: var(--search-box-bg);
+  color: var(--search-box-text);
+  font-size: 20px;
+  box-shadow: 2px 4px 20px 0px var(--search-box-shadow);
+}
+
+.submit-input {
+  width: 22%;
+  height: 66px;
+  border: none;
+  border-radius: 50px;
+  background-color: var(--submit-box-bg);
+  color: var(--submit-box-text);
+  font-size: 28px;
+  box-shadow: 2px 4px 20px 0px var(--submit-box-shadow);
+}
+
+.current-weather {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 67px 63px 68px;
+}
+
+.current-city {
+  color: var(--submit-box-bg);
+  display: inline;
+  font-size: 40px;
+}
+
+.current-detail {
+  font-size: 24px;
+  color: var(--detail-part-text);
+  margin-top: 7px;
+  font-weight: 300;
+}
+
+.current-detail strong {
+  color: var(--detail-part-strong);
+  font-weight: 500;
+}
+
+.current-temperature-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.current-icon {
+  font-size: 70px;
+}
+
+.current-temperature {
+  font-size: 68px;
+  color: var(--submit-box-bg);
+  margin-left: 7px;
+}
+
+.current-unit {
+  font-size: 30px;
+  color: var(--submit-box-bg);
+  margin-top: 4px;
 }
 
 .bottom-container {
