@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <title>Sky Savant App</title>
   </head>
   <body>
@@ -43,7 +44,9 @@
               </div>
               <div class="current-temperature-container">
                 <div class="current-icon">🌧️</div>
-                <div class="current-temperature">24</div>
+                <div class="current-temperature" id="current-temperature">
+                  24
+                </div>
                 <div class="current-unit">°C</div>
               </div>
             </div>
