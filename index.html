@@ -17,18 +17,24 @@
       <div class="container">
         <div class="top-container">
           <header>
-            <form class="search-form">
+            <form class="search-form" id="search-form">
               <input
                 type="search"
                 placeholder="Search a city.."
                 required
                 class="search-input"
+                id="search-input"
               />
-              <input type="submit" value="submit" class="submit-input" />
+              <input
+                type="submit"
+                value="Search"
+                class="submit-input"
+                id="submit-input"
+              />
             </form>
             <div class="current-weather">
               <div>
-                <h1 class="current-city">Washington</h1>
+                <h1 class="current-city" id="current-city">Washington</h1>
                 <div class="current-detail">
                   Wednesday 00:15, few clouds<br />
                   Humidity: <strong>87%</strong>, Wind:
