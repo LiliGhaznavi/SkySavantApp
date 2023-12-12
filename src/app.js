@@ -21,6 +21,7 @@ function updateTemperature(response) {
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windSpeedElement = document.querySelector("#wind-speed");
+  let currentIconElement = document.querySelector("#icon");
   let currentTemperatureElement = document.querySelector(
     "#current-temperature"
   );
@@ -30,6 +31,10 @@ function updateTemperature(response) {
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   windSpeedElement.innerHTML = `${response.data.wind.speed}Km/h`;
+  currentIconElement.innerHTML = `<img
+                    class="current-icon"
+                    src="${response.data.condition.icon_url}"
+                  />`;
   currentTemperatureElement.innerHTML = Math.round(
     response.data.temperature.current
   );
@@ -51,11 +56,11 @@ function updateDate(date) {
   let minute = date.getMinutes();
 
   if (hour < 10) {
-    let hour = `0${hour}`;
+    hour = `0${hour}`;
   }
 
   if (minute < 10) {
-    let minute = `0${minute}`;
+    minute = `0${minute}`;
   }
 
   return `${day} ${hour}:${minute}`;

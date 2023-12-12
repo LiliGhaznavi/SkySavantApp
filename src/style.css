@@ -108,13 +108,16 @@ body.dark {
 }
 
 .current-icon {
-  font-size: 70px;
+  width: 110px;
+  height: 110px;
+  position: relative;
+  top: -13px;
+  right: -13px;
 }
 
 .current-temperature {
   font-size: 68px;
   color: var(--submit-box-bg);
-  margin-left: 7px;
   font-weight: 500;
 }
 
