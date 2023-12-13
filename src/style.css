@@ -13,7 +13,7 @@ body {
   --detail-part-text: #959bbd;
   --detail-part-strong: #465375;
   --forecast-part-text: rgb(70, 83, 117, 0.7);
-  --footer-text: rgba(70, 83, 117, 0.7);
+  --footer-text: rgba(70, 83, 117, 0.6);
   --footer-link: rgb(70, 83, 117);
 
   margin-top: 60px;
@@ -142,14 +142,14 @@ body.dark {
   margin-left: 63px;
   margin-right: 74px;
   padding-top: 48px;
-  padding-bottom: 38px;
+  padding-bottom: 31px;
   text-align: center;
   display: flex;
   justify-content: space-between;
 }
 
 .forecast-date {
-  padding-bottom: 10px;
+  padding-bottom: 6px;
   font-size: 24px;
   color: var(--forecast-part-text);
   font-weight: 300;
@@ -158,8 +158,8 @@ body.dark {
 
 .forecast-icon {
   padding-bottom: 7px;
-  width: 88px;
-  height: 88px;
+  width: 98px;
+  height: 98px;
   margin: 0 auto;
 }
 
@@ -169,6 +169,10 @@ body.dark {
   display: flex;
   justify-content: space-between;
   color: var(--forecast-part-text);
+}
+
+.forecast-temperature-min {
+  font-size: 24;
 }
 
 .forecast-temperature-max {
@@ -211,12 +215,14 @@ body.dark {
   width: 30px;
   border-radius: 50px;
   background-color: #ffec41;
+  transition: transform 0.3s;
 }
 
 .switch-toggle:checked::before {
   transform: translate(132%);
   background-color: #c0d3e4;
   background-image: url(../images/switchToggleMoon.png);
+  transform: translateX(132%);
 }
 
 .switch-toggle:checked {
