@@ -13,6 +13,12 @@ function searchCity(city) {
   axios.get(apiUrl).then(updateTemperature);
 }
 
+function getForecast(city) {
+  let apiKey = "a8b8d02a8ccd7d0ta93931494eef0o1b";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function updateTemperature(response) {
   let date = new Date(response.data.time * 1000);
 
@@ -38,6 +44,8 @@ function updateTemperature(response) {
   currentTemperatureElement.innerHTML = Math.round(
     response.data.temperature.current
   );
+
+  getForecast(response.data.city);
 }
 
 function updateDate(date) {
@@ -66,20 +74,35 @@ function updateDate(date) {
   return `${day} ${hour}:${minute}`;
 }
 
-function displayForecast() {
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = [`Mon`, `Tue`, `Wed`, `Thu`, `Fri`, `Sat`, `Sun`];
+
+  return days[date.getDay()];
+}
+
+function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
-  let days = [`Thu`, `Fri`, `Sat`, `Sun`, `Mon`];
   let forecastHtml = "";
 
-  days.forEach(function (day) {
-    forecastHtml =
-      forecastHtml +
-      `<div class="forecast-day">
-                  <div class="forecast-date">${day}</div>
-                  <div class="forecast-icon">🌤️</div>
-                  <div class="forecast-temperatures"><div class="forecast-temperature">15° <strong>8°</strong></div>
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      forecastHtml =
+        forecastHtml +
+        `<div class="forecast-day">
+                  <div class="forecast-date">${formatDay(day.time)}</div>
+                  <div ><img src="${
+                    day.condition.icon_url
+                  }" class="forecast-icon"/></div>
+                  <div class="forecast-temperatures"><div class="forecast-temperature-min">${Math.round(
+                    day.temperature.minimum
+                  )}°</div>
+                  <div class="forecast-temperature-max">${Math.round(
+                    day.temperature.maximum
+                  )}°</div>
                   </div>
               </div>`;
+    }
   });
 
   forecastElement.innerHTML = forecastHtml;
@@ -92,4 +115,3 @@ switchToggle.addEventListener("click", () => {
 });
 
 searchCity("Washington");
-displayForecast();

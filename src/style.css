@@ -12,7 +12,7 @@ body {
   --submit-box-shadow: rgba(0, 0, 0, 0.2);
   --detail-part-text: #959bbd;
   --detail-part-strong: #465375;
-  --forecast-part-text: rgba(149, 155, 189, 0.7);
+  --forecast-part-text: rgb(70, 83, 117, 0.7);
   --footer-text: rgba(70, 83, 117, 0.7);
   --footer-link: rgb(70, 83, 117);
 
@@ -142,7 +142,7 @@ body.dark {
   margin-left: 63px;
   margin-right: 74px;
   padding-top: 48px;
-  padding-bottom: 47px;
+  padding-bottom: 38px;
   text-align: center;
   display: flex;
   justify-content: space-between;
@@ -153,21 +153,25 @@ body.dark {
   font-size: 24px;
   color: var(--forecast-part-text);
   font-weight: 300;
+  text-align: center;
 }
 
 .forecast-icon {
-  padding-bottom: 20px;
-  font-size: 48px;
+  padding-bottom: 7px;
+  width: 88px;
+  height: 88px;
+  margin: 0 auto;
 }
 
 .forecast-temperatures {
   font-size: 26px;
   font-weight: 300;
-
+  display: flex;
+  justify-content: space-between;
   color: var(--forecast-part-text);
 }
 
-.forecast-temperature strong {
+.forecast-temperature-max {
   font-weight: 400;
 }
 
