@@ -66,6 +66,25 @@ function updateDate(date) {
   return `${day} ${hour}:${minute}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = [`Thu`, `Fri`, `Sat`, `Sun`, `Mon`];
+  let forecastHtml = "";
+
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `<div class="forecast-day">
+                  <div class="forecast-date">${day}</div>
+                  <div class="forecast-icon">🌤️</div>
+                  <div class="forecast-temperatures"><div class="forecast-temperature">15° <strong>8°</strong></div>
+                  </div>
+              </div>`;
+  });
+
+  forecastElement.innerHTML = forecastHtml;
+}
+
 //Dark mode & Light mode switch toggle
 let switchToggle = document.getElementById("switch-toggle");
 switchToggle.addEventListener("click", () => {
@@ -73,3 +92,4 @@ switchToggle.addEventListener("click", () => {
 });
 
 searchCity("Washington");
+displayForecast();
